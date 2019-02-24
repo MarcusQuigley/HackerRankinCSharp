@@ -23,5 +23,19 @@ namespace HackerRankinCore
             }
             Console.Write('\n');
         }
+
+
+    }
+
+    public static class ArrayHelper
+    {
+        public static int[] CreateArray(string values, char delimiter = ' ')
+        {
+            if (string.IsNullOrEmpty(values))
+            {
+                throw new ArgumentNullException("values");
+            }
+            return Array.ConvertAll(values.Split(delimiter), item => Convert.ToInt32(item));
+        }
     }
 }

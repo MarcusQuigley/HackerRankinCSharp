@@ -7,8 +7,48 @@ namespace HackerRankinCore
 {
     class ArrayExercises
     {
-        
+        public static void NewYearsChaosBad(int[] q) {
+            if (q is null || q.Length < 2) {
+                Console.WriteLine(0);
+                return;
+            }
 
+            int moves = 0;
+            int bribes = 0;
+            for (int i = 1; i <= q.Length; i++)
+            {
+                if (q[i - 1] > i)
+                {
+                    bribes = (q[i - 1] - i);
+                    if (bribes > 2)
+                    {
+                        Console.WriteLine("Too chaotic");
+                        return;
+                    }
+                    moves += bribes;
+                }
+            }
+            Console.WriteLine(moves);
+
+        }
+
+        //1 2 5 3 7 8 6 4
+        //4,1,2,3
+        public static void NewYearsChaos(int[] q)
+        {
+            int ans = 0;
+            for (int i = q.Length-1; i >=0; i--)
+            {
+                if (q[i] -(i+1) > 2) {
+                    Console.WriteLine("Too chaotic");
+                    return;
+                }
+                // for (int j = Math.Max(0, q[i] - 2); j < i; j++)
+                for (int j = 0; j < i; j++)
+                    if (q[j] > q[i]) ans++;
+            }
+            Console.WriteLine(ans);
+        }
 
         public static T[] LeftRotation<T>(int rotations, T[] array)
         {
@@ -36,11 +76,7 @@ namespace HackerRankinCore
             var left = array.Take(rotations);
             var right = array.Skip(rotations).Take(array.Length - rotations);
             return right.Concat(left).ToArray();
-
-           // return null;
-        }
-
-
+         }
 
         public static T[] CreateArray<T>(int length = -1, int maxNumber = 1000)
         {
@@ -58,5 +94,5 @@ namespace HackerRankinCore
             }
             return array;
         }
-    }
+     }
 }
