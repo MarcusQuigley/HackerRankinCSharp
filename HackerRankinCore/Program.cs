@@ -6,7 +6,8 @@ namespace HackerRankinCore
     {
         static void Main(string[] args)
         {
-            TestArrays();
+            //TestArrays();
+            TestGaylesArrays();
             Console.ReadKey();
         }
 
@@ -25,6 +26,21 @@ namespace HackerRankinCore
             ArrayExercises.NewYearsChaos(array);
         }
 
+        static void TestGaylesArrays()
+        {
+            GayleArrays ga = new GayleArrays();
+            //Console.WriteLine($"is unique { ga.IsUnique("9349rffmfi3")}");
+            //Console.WriteLine($"is unique { ga.IsUnique("marcus")}");
+            //Console.WriteLine($"is unique { ga.IsUniquewithDS("marcus")}");
+            //Console.WriteLine($"is unique { ga.IsUniquewithDS("hello")}");
 
+            //Console.WriteLine($"is permutation { ga.IsPermutation("349rffmfi3", "543545frer")}");
+            //Console.WriteLine($"is permutation { ga.IsPermutation("Navan", "aannv")}");
+            //Console.WriteLine($"is permutation { ga.IsPermutation2("dog", "god")}");
+            //Console.WriteLine($"is permutation { ga.IsPermutation2("349rffmfi3", "543545frer")}");
+
+            ga.Urlify("Mr John Smith      ",13);
+        }
+       
     }
 }
