@@ -6,24 +6,26 @@ namespace HackerRankinCore
     {
         static void Main(string[] args)
         {
-            //TestArrays();
-            TestGaylesArrays();
+            TestArrays();
+          //  TestGaylesArrays();
             Console.ReadKey();
         }
 
         static void TestArrays()
         {
+            var ae = new ArrayExercises();
             ////var array = ArrayExercises.CreateArray<int>(5,10);
             //var array = new int[] { 1, 2, 3, 4, 5 };
             //array.DisplayArray();
             //array= ArrayExercises.LeftRotation(4, array);
             //array.DisplayArray();
-           // var array = ArrayHelper.CreateArray("2 5 1 3 4");
+            // var array = ArrayHelper.CreateArray("2 5 1 3 4");
             var array = ArrayHelper.CreateArray("1 2 5 3 7 8 6 4");
             //  var array = new int[] { 4, 1, 2, 3 };
 
-
-            ArrayExercises.NewYearsChaos(array);
+          Console.WriteLine( ae.MinimumSwaps(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
+         //   ArrayExercises.NewYearsChaos(array);
+         
         }
 
         static void TestGaylesArrays()

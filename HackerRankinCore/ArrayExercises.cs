@@ -5,7 +5,7 @@ using System.Text;
 
 namespace HackerRankinCore
 {
-    class ArrayExercises
+    public class ArrayExercises
     {
         public static T[] CreateArray<T>(int length = -1, int maxNumber = 1000)
         {
@@ -94,6 +94,35 @@ namespace HackerRankinCore
             return right.Concat(left).ToArray();
          }
 
-        
+        public int MinimumSwaps(int[] array)
+        {
+            if (array == null)
+                throw new ArgumentNullException("array");
+
+            if (array.Length == 1)
+                return 1;
+            int swaps = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] != i + 1)
+                {
+                    int t = i+1;
+                    while (array[t] != i + 1)
+                    {
+                        t++;
+                    }
+                    int temp = array[t];
+                    array[t] = array[i];
+                    array[i]= temp ;
+                    swaps++;
+                }
+            }
+            
+            return swaps;
+        }
+
+
+
      }
 }

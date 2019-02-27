@@ -3,7 +3,7 @@ using System;
 using Xunit;
 
 
-namespace XUnitTestProject1
+namespace HackerRankinCore.Tests
 {
     public class GayleArraysTests
     {
