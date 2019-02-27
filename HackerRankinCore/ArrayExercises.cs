@@ -7,6 +7,22 @@ namespace HackerRankinCore
 {
     class ArrayExercises
     {
+        public static T[] CreateArray<T>(int length = -1, int maxNumber = 1000)
+        {
+            Random r = new Random();
+            if (length == -1)
+            {
+                length = r.Next() * 1000;
+            }
+            int[] arr = new int[length];
+            T[] array = new T[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                array[i] = (T)Convert.ChangeType(r.Next(maxNumber), typeof(T));
+            }
+            return array;
+        }
         public static void NewYearsChaosBad(int[] q) {
             if (q is null || q.Length < 2) {
                 Console.WriteLine(0);
@@ -78,21 +94,6 @@ namespace HackerRankinCore
             return right.Concat(left).ToArray();
          }
 
-        public static T[] CreateArray<T>(int length = -1, int maxNumber = 1000)
-        {
-            Random r = new Random();
-            if (length == -1)
-            {
-                length = r.Next() * 1000;
-            }
-            int[] arr = new int[length];
-            T[] array = new T[length];
-
-            for (int i = 0; i < length; i++)
-            {
-                array[i] = (T)Convert.ChangeType(r.Next(maxNumber), typeof(T));
-            }
-            return array;
-        }
+        
      }
 }

@@ -173,8 +173,6 @@ namespace HackerRankinCore
                     counter -= 1;
                 }
             }
-
-            
  
             if (arg.Length % 2 == 0)
             {
