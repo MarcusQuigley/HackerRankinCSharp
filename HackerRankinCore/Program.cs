@@ -23,9 +23,11 @@ namespace HackerRankinCore
             var array = ArrayHelper.CreateArray("1 2 5 3 7 8 6 4");
             //  var array = new int[] { 4, 1, 2, 3 };
 
-          Console.WriteLine( ae.MinimumSwaps(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
-         //   ArrayExercises.NewYearsChaos(array);
-         
+        // Console.WriteLine( ae.MinimumSwaps(new int[] { 7, 1, 3, 2, 4, 5, 6 }));
+
+            Console.WriteLine(ae.ArrayManipulation(10, new int[][] { new int[] { 1, 5, 3 }, new int[] { 4, 8, 7 }, new int[] { 6, 9, 1 } }));
+            //   ArrayExercises.NewYearsChaos(array);
+
         }
 
         static void TestGaylesArrays()

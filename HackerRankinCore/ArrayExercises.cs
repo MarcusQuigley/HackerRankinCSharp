@@ -123,6 +123,57 @@ namespace HackerRankinCore
         }
 
 
+        public int ArrayManipulationOld(int n, int[][] queries)
+        {
+            int[] array = new int[n];
+            for (int j = 0; j < array.Length; j++)
+            {
+                array[j] = 0;
+            }
 
-     }
+            int from, to, summand = 0;
+            int maxValue = int.MinValue;
+
+            for (int i = 0; i < queries.Length; i++)
+            {
+                from = queries[i][0];
+                to = queries[i][1];
+                summand = queries[i][2];
+
+                for (int k = from; k <= to; k++)
+                {
+                    int value = array[k - 1] + summand;
+                    array[k - 1] = value;
+                    if (value > maxValue)
+                    {
+                        maxValue = value;
+                    }
+                }
+            }
+            return maxValue;
+        }
+
+        public long ArrayManipulation(int n, int[][] queries) {
+            var array = new long[n + 1];
+
+            int to, from, summand;
+                long sum = 0;
+            long max = 0;
+            for (int i = 0; i < queries.Length; i++)
+            {
+                from = queries[i][0];
+                to = queries[i][1];
+                  summand = queries[i][2];
+                array[from-1] += summand;
+                array[to ] -= summand;
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+                max = Math.Max(max, sum);
+            }
+            return max;
+        }
+    }
 }

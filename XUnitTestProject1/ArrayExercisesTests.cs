@@ -20,5 +20,44 @@ namespace HackerRankinCore.Tests
             Assert.Equal(expectedResult, result);
 
         }
+        [Theory]
+        [InlineData(10, 10)]
+        public void ArrayManipulation1(int emptyArrayLength, int expectedResult)
+        {
+            int[][] queries = new int[][] { new int[] { 1,5,3}, new int[] { 4,8,7}, new int[] {6,9,1} };
+            var ae = new ArrayExercises();
+            var result = ae.ArrayManipulation(emptyArrayLength, queries);
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData(5, 200)]
+        public void ArrayManipulation2(int emptyArrayLength, int expectedResult)
+        {
+            int[][] queries = new int[][] { new int[] { 1, 2,100 }, new int[] { 2,5, 100 }, new int[] { 3,4, 100 } };
+            var ae = new ArrayExercises();
+            var result = ae.ArrayManipulation(emptyArrayLength, queries);
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData(10, 31)]
+        public void ArrayManipulation3(int emptyArrayLength, int expectedResult)
+        {
+            int[][] queries = new int[][] { new int[] {2,6,8}, new int[] { 3,5,7 }, new int[] {1,8,1 }, new int[] { 5,9,15} };
+            var ae = new ArrayExercises();
+            var result = ae.ArrayManipulation(emptyArrayLength, queries);
+            Assert.Equal(expectedResult, result);
+        }
+
+        [Theory]
+        [InlineData(5, 200)]
+        public void ArrayManipulation4(int emptyArrayLength, int expectedResult)
+        {
+            int[][] queries = new int[][] { new int[] {1,2, 100 }, new int[] { 2, 5, 100 }, new int[] { 3,4, 100 }};
+            var ae = new ArrayExercises();
+            var result = ae.ArrayManipulation(emptyArrayLength, queries);
+            Assert.Equal(expectedResult, result);
+        }
     }
 }
