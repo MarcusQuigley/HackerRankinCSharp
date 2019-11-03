@@ -59,5 +59,16 @@ namespace HackerRankinCore.Tests
             var result = ae.ArrayManipulation(emptyArrayLength, queries);
             Assert.Equal(expectedResult, result);
         }
+        [Theory]
+        [InlineData(new int[] {1,4,3,2 }, new int[] { 2,3,4,1 })]
+        [InlineData(new int[] { 1}, new int[] { 1 })]
+        [InlineData(new int[] {  }, new int[] {  })]
+        public void TestArrayReverse(int[] array, int[] expectedResult)
+        {
+            var ae = new ArrayExercises();
+            var result = ae.ReverseArray(array);
+            Assert.Equal(expectedResult, result);
+        }
+         
     }
 }

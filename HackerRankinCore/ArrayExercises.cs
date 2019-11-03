@@ -175,5 +175,21 @@ namespace HackerRankinCore
             }
             return max;
         }
+
+        public   int[] ReverseArray(int[] array)
+        {
+            if (array == null) throw new ArgumentNullException("array");
+            int n = array.Length;
+            int moves = n / 2;
+            for (int i = 0; i < moves; i++)
+            {
+                int temp = array[i];
+                array[i] = array[n - i - 1];
+                array[n - i - 1] = temp;
+            }
+            return array;
+        }
+
     }
+
 }
